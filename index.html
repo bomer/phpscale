@@ -2,17 +2,28 @@
 <html>
 <body>
 
+<script>
+function empty() {
+    var x;
+    x = document.getElementById("image").value;
+    if (x == "") {
+        alert("Enter a Valid Image bro");
+        return false;
+    };
+}
+</script>
 <form action="scale.php" method="post" enctype="multipart/form-data">
 
-name:
-<input type="text" name="name"></br>
     Select image to scale:
 
     <input type="file" name="image" id="image">
     <br>
-    <input type="submit" value="Upload Image" name="submit">
+    width:<input type="text" name="width" value="2000"> <br>
+    <input type="submit" value="Upload Image" name="submit" onClick="return empty()"/>
 </form>
-<a href="preview.php">Preview</a>
-<a href="index.php">API</a>
+
+before:<img src="before.jpg">
+
+after:<img src="after.jpg">
 </body>
 </html>
